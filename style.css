@@ -1,0 +1,178 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: #fbff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#page1 h1 {
+    margin: 2vw;
+    font-size: 6.5vw;
+    line-height: 5vw;
+    letter-spacing: -0.2vw;
+    font-weight: 200;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #0a0a0a;
+    z-index: 6 !important;
+}
+
+#page2 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(0, 0, 0) !important;
+        bottom: -30px;
+
+}
+
+#page3 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: rgb(240, 128, 128);
+    bottom: -30px;
+}
+
+#loader {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    background-color: #00000044;
+}
+
+#yellow1 {
+    height: 100vh !important;
+    width: 100%;
+    background-color: #fbff00;
+    position: absolute;
+    z-index: 8 !important;
+}
+
+#yellow2 {
+    height: 100vh !important;
+    width: 100%;
+    background-color: #fbff00;
+    position: absolute;
+    z-index: 7 !important;
+}
+
+#loader #video {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.elem {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.elem h2 {
+    font-size: 9.7vw;
+    line-height: 7.7vw;
+    text-transform: uppercase;
+    font-weight: 100;
+    position: relative;
+    z-index: 9;
+    color: rgb(75, 75, 75);
+}
+
+.elem .moving {
+    background-color: #fbff00;
+    width: 100%;
+    position: absolute;
+    white-space: nowrap;
+    top: 50%;
+    overflow: hidden;
+    transform: translate(0, -50%) scaleY(0);
+    transition: all ease 0.5s;
+}
+
+.elem .moving .moving-in {
+    white-space: nowrap;
+    display: inline-block;
+    animation: moving 15s linear infinite;
+}
+
+.elem .moving .moving-in h5 {
+    color: black;
+    display: inline-block;
+    font-size: 1.7vw;
+    font-weight: 200;
+    transition: all ease 0.5s;
+    transition-delay: 0.2s;
+    text-transform: uppercase;
+    margin-right: 30px;
+    opacity: 0;
+    padding: 4px 0;
+}
+
+@keyframes moving {
+    form {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.elem:hover .moving {
+    transform: translate(0, -50%) scaleY(1);
+}
+
+.elem:hover .moving h5 {
+    opacity: 1;
+}
+
+.elem:hover h2 {
+    font-style: italic !important;
+    color: black;
+}
+
+.moving .blur {
+    position: absolute;
+    width: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fbff00;
+    box-shadow: 10px 0px 20px 20px #fbff00, -10px 0px 20px 20px #fbff00;
+    height: 100%;
+    z-index: 8;
+}
