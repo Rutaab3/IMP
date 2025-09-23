@@ -48,17 +48,18 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.4s ease-in-out;
     background-color: rgb(0, 0, 0) !important;
-        bottom: -30px;
-
 }
 
 #page3 {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     position: relative;
-    background-color: rgb(240, 128, 128);
-    bottom: -30px;
+    background-color: rgb(230, 230, 230);
 }
 
 #loader {
@@ -103,7 +104,7 @@ body {
 }
 
 .elem h2 {
-    font-size: 9.7vw;
+    font-size: 9.9vw;
     line-height: 7.7vw;
     text-transform: uppercase;
     font-weight: 100;
@@ -175,4 +176,64 @@ body {
     box-shadow: 10px 0px 20px 20px #fbff00, -10px 0px 20px 20px #fbff00;
     height: 100%;
     z-index: 8;
+}
+
+.image-container{
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-div{
+    height: 30vw;
+    width: 20vw;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    margin: 15px;
+}
+
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all ease-in 0.4s;
+
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #0000001c;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: all ease 0.3s;
+    z-index: 9;
+}
+ .overlay p{
+    font-size: 2.5vh;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 2vw;
+    opacity: 0;
+    transition: all ease-in-out 0.1s;
+    transition-delay: 0.3s ;
+ }
+
+ .image-div:hover .overlay{
+    background-color: #000;
+ }
+  .image-div:hover .overlay p{
+    opacity: 1;
+}
+
+ .image-div:hover img{
+    transform: scale(10);
 }
